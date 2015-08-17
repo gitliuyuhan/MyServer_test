@@ -92,7 +92,7 @@ void* sfile_thread(void* arg)
     bzero(buf,32768);
     while((ret=read(fd,buf,32768))>0)
     {
-        ret = send(*sock,buf,32768,0);
+        ret = send(*sock,buf,ret,0);
         if(ret<0)
         {
             printf("发送失败\n");
